@@ -1,0 +1,46 @@
+/* .hero h4,
+.hero p,
+.hero h1 {
+  animation: bounce 2s infinite;
+}
+
+.hero h4 {
+  animation-delay: 0s;
+}
+.hero p {
+  animation-delay: 0.2s;
+}
+
+.hero h1 {
+  animation-delay: 0.4s;
+} */
+
+.hero h4 {
+  animation: pan-left 4s ease-out forwards; /* h4 bergerak dari kiri */
+}
+
+.hero p {
+  animation: pan-right 4s ease-out forwards; /* p bergerak dari kanan */
+}
+
+.hero h1 {
+  animation: expand 4s ease-out forwards; /* Durasi 1.5 detik, ease-out untuk efek lembut, forwards untuk berhenti di akhir */
+}
+
+/* Animasikan tombol */
+.btn {
+  animation: fadeInBtn 2s ease-in-out forwards; /* Animasi muncul selama 2 detik */
+  transition: transform 0.3s ease-in-out; /* Transisi untuk hover */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6699; /* Warna background */
+  color: white; /* Warna teks */
+  font-size: 1.2rem; /* Ukuran font */
+  border-radius: 5px; /* Sedikit membulat */
+  text-decoration: none; /* Hilangkan underline */
+}
+
+/* Efek hover agar tombol membesar sedikit */
+.btn:hover {
+  transform: scale(1.1); /* Membesar saat di-hover */
+}

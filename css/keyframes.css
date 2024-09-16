@@ -1,0 +1,75 @@
+/* Keyframes untuk animasi pan dari kiri */
+@keyframes pan-left {
+  0% {
+    transform: translateX(-100%); /* Mulai dari luar layar sebelah kiri */
+    opacity: 0; /* Mulai dari transparan */
+  }
+  100% {
+    transform: translateX(0); /* Berhenti di posisi aslinya */
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+  }
+}
+
+/* Keyframes untuk animasi pan dari kanan */
+@keyframes pan-right {
+  0% {
+    transform: translateX(100%); /* Mulai dari luar layar sebelah kanan */
+    opacity: 0; /* Mulai dari transparan */
+  }
+  100% {
+    transform: translateX(0); /* Berhenti di posisi aslinya */
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(0); /* Mulai dari ukuran sangat kecil */
+    opacity: 0; /* Mulai dari transparan */
+  }
+  80% {
+    transform: scale(1); /* Sedikit lebih besar dari ukuran normal */
+    opacity: 1; /* Sementara berubah menjadi terlihat */
+  }
+  100% {
+    transform: scale(1); /* Kembali ke ukuran normal */
+  }
+}
+
+/* @keyframes  {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  } */
+
+/* Animasi fade-in untuk tombol */
+@keyframes fadeInBtn {
+  0% {
+    opacity: 0; /* Tombol tidak terlihat di awal */
+    transform: scale(0.5); /* Mulai dari ukuran kecil */
+  }
+  100% {
+    opacity: 1; /* Sepenuhnya terlihat */
+    transform: scale(1); /* Ukuran normal */
+  }
+}
