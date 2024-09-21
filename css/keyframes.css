@@ -73,3 +73,43 @@
     transform: scale(1); /* Ukuran normal */
   }
 }
+
+/* Animasi fade-in dari hilang */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Mulai dari transparan */
+    transform: scale(0.5); /* Mulai dari ukuran kecil */
+  }
+  100% {
+    opacity: 1; /* Sepenuhnya terlihat */
+    transform: scale(1); /* Ukuran normal */
+  }
+}
+
+/* Animasi pulse */
+@keyframes pulseAnimation {
+  0%,
+  100% {
+    transform: scale(1); /* Ukuran normal */
+  }
+  50% {
+    transform: scale(1.05); /* Membesar sedikit di pertengahan */
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(100vh) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
+}

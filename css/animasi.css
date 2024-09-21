@@ -15,21 +15,25 @@
   animation-delay: 0.4s;
 } */
 
+.logo-header {
+  animation: pulseAnimation 2s ease-in-out infinite;
+}
+
 .hero h4 {
-  animation: pan-left 4s ease-out forwards; /* h4 bergerak dari kiri */
+  animation: pan-left 3s ease-out forwards; /* h4 bergerak dari kiri */
 }
 
 .hero p {
-  animation: pan-right 4s ease-out forwards; /* p bergerak dari kanan */
+  animation: pan-right 3s ease-out forwards; /* p bergerak dari kanan */
 }
 
 .hero h1 {
-  animation: expand 4s ease-out forwards; /* Durasi 1.5 detik, ease-out untuk efek lembut, forwards untuk berhenti di akhir */
+  animation: expand 3s ease-out forwards; /* Durasi 1.5 detik, ease-out untuk efek lembut, forwards untuk berhenti di akhir */
 }
 
 /* Animasikan tombol */
 .btn {
-  animation: fadeInBtn 2s ease-in-out forwards; /* Animasi muncul selama 2 detik */
+  animation: fadeInBtn 7s ease-in-out forwards; /* Animasi muncul selama 2 detik */
   transition: transform 0.3s ease-in-out; /* Transisi untuk hover */
   display: inline-block;
   padding: 10px 20px;

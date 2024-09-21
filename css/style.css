@@ -7,6 +7,7 @@
 body {
   font-size: 1.2rem;
   font-family: "Work Sans", sans-serif;
+  overflow-x: hidden;
   /* min-height: 4000px; */
 }
 
@@ -32,26 +33,35 @@ body {
 }
 
 .hero h4 {
-  font-size: 3rem;
+  font-size: 2rem;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
   font-weight: bold;
+  color: #ffe08e;
 }
 
 .hero p {
-  font-size: 6rem;
-  font-weight: bold; /* Menambah ketebalan huruf */
-  font-size: 18px; /* Membuat teks lebih besar */
-  letter-spacing: 1px; /* Menambah spasi antar huruf */
-  color: #fff; /* Memastikan teks berwarna putih (atau sesuai kebutuhan) */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Menambahkan bayangan pada teks agar terlihat lebih jelas */
+  font-weight: bold;
+  /* Menambah ketebalan huruf */
+  font-size: 2rem;
+  /* Membuat teks lebih besar */
+  /* letter-spacing: 1px; Menambah spasi antar huruf */
+  color: #ffe08e;
+  /* Memastikan teks berwarna putih (atau sesuai kebutuhan) */
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  /* Menambahkan bayangan pada teks agar terlihat lebih jelas */
 }
 
 .logo-header {
-  height: 300px; /* Sesuaikan tinggi logo */
-  width: auto; /* Agar proporsi logo tetap terjaga */
-  max-width: 100%; /* Pastikan gambar tidak lebih besar dari container */
-  display: block; /* Membuat gambar bertindak sebagai elemen block */
-  margin: 0 auto; /* Untuk memastikan logo berada di tengah, jika diperlukan */
+  height: 300px;
+  /* Sesuaikan tinggi logo */
+  width: auto;
+  /* Agar proporsi logo tetap terjaga */
+  max-width: 100%;
+  /* Pastikan gambar tidak lebih besar dari container */
+  display: block;
+  /* Membuat gambar bertindak sebagai elemen block */
+  margin: 0 auto;
+  /* Untuk memastikan logo berada di tengah, jika diperlukan */
 }
 
 /* .hero h1 {
@@ -65,13 +75,15 @@ body {
 }
 
 .hero a {
-  color: var(--pink);
-  background-color: white;
+  color: white;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  background-color: var(--pink);
   box-shadow: var(--shadow);
 }
 
 .hero a:hover {
-  background-color: var(--pink);
+  background-color: #ffe08e;
   color: white;
 }
 
@@ -97,6 +109,37 @@ body {
   height: 100vh;
 }
 
+#quran {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full height sesuai viewport */
+  overflow: hidden; /* Hindari overflow ke section lain */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#quran video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Video memenuhi section dengan rasio benar */
+}
+#quran h2 {
+  position: relative;
+  color: white;
+  z-index: 1;
+  font-size: 3rem;
+}
+
+/* Section lain di bawahnya untuk menguji */
+/* section {
+  padding: 50px;
+  background-color: lightgray;
+  text-align: center;
+} */
+
 /* home start */
 .home {
   background-image: url(../img/bg.png);
@@ -108,7 +151,7 @@ body {
   margin-top: -6rem;
   padding-top: 15rem;
   padding-bottom: 5rem;
-  margin: 0;
+  /* margin: 0; */
 }
 
 .home h2,
@@ -165,6 +208,15 @@ body {
 .home .heart i {
   margin: auto;
   color: var(--pink);
+}
+
+.gallery {
+  overflow-x: hidden;
+}
+
+.gallery img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* info section start */
@@ -238,6 +290,7 @@ body {
   padding: 1.4rem 0;
   margin-top: 1rem;
   position: relative;
+  overflow: hidden;
 }
 
 .timeline::before {
@@ -266,8 +319,8 @@ body {
 }
 
 .timeline li .timeline-image {
-  width: 160px;
-  height: 160px;
+  width: 10rem;
+  height: 10rem;
   background-color: #ccc;
   position: absolute;
   left: 50%;
@@ -350,6 +403,7 @@ body {
 .rsvp form label {
   color: white;
 }
+
 .rsvp button {
   background-color: var(--pink);
   color: white;
@@ -361,11 +415,13 @@ body {
   color: var(--pink);
   border: 1px solid var(white);
 }
+
 footer {
   padding: 3rem;
   background-color: var(--pink);
   color: white;
 }
+
 footer a {
   color: var(--bg);
   font-weight: bold;
@@ -391,11 +447,19 @@ footer a {
   line-height: 0;
 }
 
-/* media query */
 /* Extra Large */
 @media (max-width: 1200px) {
   .home .heart {
     transform: translateX(-50%) translateY(45px);
+  }
+
+  .sticky-top {
+    overflow: hidden;
+  }
+
+  .quran video {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -443,6 +507,14 @@ footer a {
     left: -13px;
     right: auto;
   }
+
+  .sticky-top {
+    overflow: hidden;
+  }
+  .quran video {
+    width: 80%;
+    height: 80%;
+  }
 }
 
 /* tablet */
@@ -469,6 +541,11 @@ footer a {
     width: 100px;
     height: 100px;
   }
+
+  .quran video {
+    width: 50%;
+    height: 50%;
+  }
 }
 
 /* mobile phone */
@@ -479,7 +556,7 @@ footer a {
 
   .simply-countdown > .simply-section {
     padding: 40px;
-    margin: 3;
+    margin: 3px;
   }
 
   .timeline li .timeline-image {
@@ -498,5 +575,15 @@ footer a {
 
   .timeline li .timeline-panel::after {
     top: 31%;
+  }
+
+  .sticky-top {
+    overflow: hidden;
+  }
+
+  .quran video {
+    width: 30%;
+    height: 30%;
+    object-fit: cover;
   }
 }

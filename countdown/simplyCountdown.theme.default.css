@@ -16,7 +16,7 @@
   background: var(--pink);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 50%;
-  transition: transform 0.3s ease; /* Tambahkan efek hover */
+  /* transition: transform 0.3s ease; Tambahkan efek hover */
 }
 
 .simply-countdown > .simply-section:hover {
@@ -28,35 +28,12 @@
   text-align: center;
 }
 .simply-countdown > .simply-section .simply-amount {
-  font-size: 1.75rem; /* Membuat angka lebih besar */
+  font-size: 1.5rem; /* Membuat angka lebih besar */
   font-weight: bold;
   color: #fff; /* Memastikan teks tetap terlihat di background berwarna */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 /* animasi */
-
-/* Animasi fade-in dari hilang */
-@keyframes fadeIn {
-  0% {
-    opacity: 0; /* Mulai dari transparan */
-    transform: scale(0.5); /* Mulai dari ukuran kecil */
-  }
-  100% {
-    opacity: 1; /* Sepenuhnya terlihat */
-    transform: scale(1); /* Ukuran normal */
-  }
-}
-
-/* Animasi pulse */
-@keyframes pulseAnimation {
-  0%,
-  100% {
-    transform: scale(1); /* Ukuran normal */
-  }
-  50% {
-    transform: scale(1.05); /* Membesar sedikit di pertengahan */
-  }
-}
 
 /* Menggabungkan kedua animasi */
 .simply-countdown > .simply-section {
