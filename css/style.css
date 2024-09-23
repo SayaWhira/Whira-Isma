@@ -91,7 +91,7 @@ body {
 .mynavbar .navbar-brand,
 .mynavbar .offcanvas-title {
   font-family: "sacramento", cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
@@ -106,39 +106,103 @@ body {
 }
 
 .mynavbar .offcanvas {
-  height: 100vh;
+  height: 100vh; /* Limit the height to 50% of the viewport */
+  width: 50vw; /* Set the width to 80% of the viewport */
+  max-width: 320px; /* Set a max width if needed */
 }
 
-#quran {
+.quran {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full height sesuai viewport */
-  overflow: hidden; /* Hindari overflow ke section lain */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 77vh;
+  /* Sesuaikan tinggi dengan viewport */
+  overflow: hidden;
+  /* Sembunyikan bagian video yang keluar dari area */
 }
-#quran video {
+
+.video-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Video memenuhi section dengan rasio benar */
-}
-#quran h2 {
-  position: relative;
-  color: white;
-  z-index: 1;
-  font-size: 3rem;
+  z-index: -1;
+  /* Tempatkan video di belakang elemen lain */
+  overflow: hidden;
 }
 
-/* Section lain di bawahnya untuk menguji */
-/* section {
-  padding: 50px;
-  background-color: lightgray;
-  text-align: center;
-} */
+.video-quran {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: auto;
+  min-height: auto;
+  width: 100%;
+  height: 110%;
+  z-index: -1;
+  /* Agar tetap berada di belakang konten */
+  object-fit: cover;
+  /* Video akan memenuhi seluruh area tanpa distorsi */
+  pointer-events: none;
+  /* Agar video tidak bisa diinteraksi */
+}
+
+.quran .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.quran-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  /* opacity: 0; */
+  padding-bottom: 6rem;
+  /* animation: fadeIn 5s ease-in forwards; */
+}
+
+.logo {
+  position: absolute;
+  top: 15%;
+  /* Adjust sesuai posisi yang diinginkan */
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center;
+  max-width: 30%;
+  /* Ukuran logo lebih kecil */
+  height: auto;
+  /* opacity: 0; */
+  /* animation: fadeIn 5s ease-in forwards, pulse 3s infinite ease-in-out 3s; */
+}
+
+.ayat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 500px;
+  /* Sesuaikan dengan tinggi elemen */
+  overflow: hidden;
+  /* Sembunyikan bagian teks yang belum muncul */
+  white-space: pre-wrap;
+  /* Mengizinkan teks untuk membungkus */
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: "Merienda", cursive;
+  font-style: italic;
+  font-weight: bold;
+  color: #000000;
+  /* Sesuaikan warna teks */
+  opacity: 0;
+  /* Dimulai dengan tidak terlihat */
+  transition: opacity 0.5s ease-in;
+  /* Transisi opacity */
+}
 
 /* home start */
 .home {
@@ -448,7 +512,7 @@ footer a {
 }
 
 /* Extra Large */
-@media (max-width: 1200px) {
+@media (max-width: 1920px) {
   .home .heart {
     transform: translateX(-50%) translateY(45px);
   }
@@ -457,9 +521,31 @@ footer a {
     overflow: hidden;
   }
 
-  .quran video {
-    width: 100%;
-    height: 100%;
+  .quran-image {
+    padding-top: 8%;
+    max-width: 90%;
+    /* Lebih kecil untuk layar yang lebih kecil */
+  }
+
+  .logo {
+    max-width: 35%;
+    /* Menyesuaikan ukuran logo */
+    top: 16%;
+    /* Menurunkan posisi logo */
+  }
+
+  .quran p {
+    font-size: 12px;
+    /* Lebih kecil lagi untuk layar sempit */
+    top: 51%;
+    /* Menyesuaikan posisi teks */
+    width: 60%;
+    /* Mengoptimalkan ruang teks */
+  }
+
+  .video-quran {
+    top: 40%;
+    height: 93%;
   }
 }
 
@@ -511,9 +597,32 @@ footer a {
   .sticky-top {
     overflow: hidden;
   }
-  .quran video {
-    width: 80%;
-    height: 80%;
+
+  .quran-image {
+    padding-top: 7%;
+    max-width: 90%;
+    /* Lebih kecil untuk layar yang lebih kecil */
+  }
+
+  .logo {
+    max-width: 35%;
+    /* Menyesuaikan ukuran logo */
+    top: 16%;
+    /* Menurunkan posisi logo */
+  }
+
+  .quran p {
+    font-size: 13px;
+    /* Lebih kecil lagi untuk layar sempit */
+    top: 55%;
+    /* Menyesuaikan posisi teks */
+    width: 55%;
+    /* Mengoptimalkan ruang teks */
+  }
+
+  .video-quran {
+    top: 40%;
+    height: 99%;
   }
 }
 
@@ -542,9 +651,31 @@ footer a {
     height: 100px;
   }
 
-  .quran video {
-    width: 50%;
-    height: 50%;
+  .quran-image {
+    padding-top: 7%;
+    max-width: 90%;
+    /* Lebih kecil untuk layar yang lebih kecil */
+  }
+
+  .logo {
+    max-width: 35%;
+    /* Menyesuaikan ukuran logo */
+    top: 16%;
+    /* Menurunkan posisi logo */
+  }
+
+  .quran p {
+    font-size: 13px;
+    /* Lebih kecil lagi untuk layar sempit */
+    top: 55%;
+    /* Menyesuaikan posisi teks */
+    width: 55%;
+    /* Mengoptimalkan ruang teks */
+  }
+
+  .video-quran {
+    top: 40%;
+    height: 102%;
   }
 }
 
@@ -555,7 +686,7 @@ footer a {
   }
 
   .simply-countdown > .simply-section {
-    padding: 40px;
+    padding: 35px;
     margin: 3px;
   }
 
@@ -581,9 +712,108 @@ footer a {
     overflow: hidden;
   }
 
-  .quran video {
-    width: 30%;
-    height: 30%;
-    object-fit: cover;
+  .quran-image {
+    padding-top: 9%;
+    max-width: 90%;
+    /* Lebih kecil untuk layar yang lebih kecil */
+  }
+
+  .logo {
+    max-width: 35%;
+    /* Menyesuaikan ukuran logo */
+    top: 17%;
+    /* Menurunkan posisi logo */
+  }
+
+  .quran p {
+    font-size: 12px;
+    /* Lebih kecil lagi untuk layar sempit */
+    top: 55%;
+    /* Menyesuaikan posisi teks */
+    width: 57%;
+    /* Mengoptimalkan ruang teks */
+  }
+
+  .video-quran {
+    top: 40%;
+    height: 103%;
+  }
+
+  .mynavbar .nav-link {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .mynavbar {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: none;
+  }
+
+  .mynavbar .offcanvas {
+    height: 100vh; /* Limit the height to 50% of the viewport */
+    width: 50vw; /* Set the width to 80% of the viewport */
+    max-width: 320px; /* Set a max width if needed */
+  }
+
+  .mynavbar .offcanvas-title {
+    font-family: "sacramento", cursive;
+    font-size: 2.3rem;
+    font-weight: bold;
+  }
+}
+
+/* mobile phone */
+@media (max-width: 380px) {
+  html {
+    font-size: 60%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 30px;
+    margin: 3px;
+  }
+
+  .quran-image {
+    padding-top: 26%;
+    max-width: 90%;
+    /* Lebih kecil untuk layar yang lebih kecil */
+  }
+
+  .logo {
+    max-width: 35%;
+    /* Menyesuaikan ukuran logo */
+    top: 26%;
+    /* Menurunkan posisi logo */
+  }
+
+  .quran p {
+    font-size: 10px;
+    /* Lebih kecil lagi untuk layar sempit */
+    top: 60%;
+    /* Menyesuaikan posisi teks */
+    width: 57%;
+    /* Mengoptimalkan ruang teks */
+  }
+
+  .video-quran {
+    top: 40%;
+    height: 103%;
+  }
+
+  .mynavbar {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: none;
+  }
+
+  .mynavbar .offcanvas {
+    height: 100vh; /* Limit the height to 50% of the viewport */
+    width: 50vw; /* Set the width to 80% of the viewport */
+    max-width: 320px; /* Set a max width if needed */
+  }
+
+  .mynavbar .offcanvas-title {
+    font-family: "sacramento", cursive;
+    font-size: 2.3rem;
+    font-weight: bold;
   }
 }

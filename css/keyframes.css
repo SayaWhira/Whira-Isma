@@ -113,3 +113,60 @@
     opacity: 0;
   }
 }
+/* quran */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, 0) scale(1); /* Mempertahankan translate */
+  }
+  50% {
+    transform: translate(-50%, 0) scale(1.1); /* Tetap di tengah sambil memperbesar */
+  }
+  100% {
+    transform: translate(-50%, 0) scale(1); /* Kembali ke ukuran normal tanpa bergeser */
+  }
+}
+
+/* @keyframes typingVertical {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 1000px;
+    opacity: 1;
+  }
+} */
+
+@keyframes typing {
+  0% {
+    opacity: 0;
+    content: "";
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes typingEffect {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

@@ -48,3 +48,25 @@
 .btn:hover {
   transform: scale(1.1); /* Membesar saat di-hover */
 }
+
+/* animasi Quran */
+
+.quran-image,
+.logo,
+.ayat {
+  opacity: 0; /* Animasi dimulai dengan elemen tidak terlihat */
+}
+
+.animate .quran-image {
+  animation: fadeIn 5s ease-in forwards;
+  opacity: 1;
+}
+
+.animate .logo {
+  animation: fadeIn 5s ease-in forwards, pulse 3s infinite ease-in-out 3s;
+  opacity: 1;
+}
+
+.animate .ayat {
+  opacity: 1;
+}

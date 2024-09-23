@@ -30,6 +30,7 @@ function enableScroll() {
   window.onscroll = function () {};
   rootElement.style.scrollBehavior = "smooth";
   playAudio();
+  document.getElementById("quran").classList.add("animate");
 }
 
 function playAudio() {
@@ -96,4 +97,64 @@ simplyCountdown(".simply-countdown", {
     minutes: { singular: "Menit", plural: "Menit" },
     seconds: { singular: "Detik", plural: "Detik" },
   },
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Fungsi untuk memicu animasi ketika elemen quran masuk ke viewport
+  let observer = new IntersectionObserver(
+    function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target); // Stop observing setelah animasi berjalan
+        }
+      });
+    },
+    {
+      threshold: 0.0, // Bagian elemen yang harus terlihat (50% dari tinggi elemen) sebelum animasi dimulai
+    }
+  );
+
+  // Targetkan section #quran
+  let quranSection = document.getElementById("quran");
+  observer.observe(quranSection); // Mulai memantau section quran
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const text =
+    "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir. QS: Ar-Rum Ayat 21";
+  const container = document.querySelector(".ayat");
+  container.innerHTML = ""; // Kosongkan konten awal
+
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      container.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(type, 30); // Atur kecepatan munculnya huruf (ms)
+    } else {
+      container.classList.add("animate"); // Tambahkan kelas animasi setelah semua huruf muncul
+    }
+  }
+
+  type(); // Mulai animasi
+});
+
+// Select all nav links inside the offcanvas
+const navLinks = document.querySelectorAll(".offcanvas-body .nav-link");
+const offcanvasElement = document.getElementById("offcanvasNavbar");
+
+// Function to close the offcanvas
+const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    // Close the offcanvas when any link is clicked
+    bsOffcanvas.hide();
+  });
+});
+// tirai
+document.querySelector(".btn").addEventListener("click", function () {
+  document.querySelector(".curtain").classList.add("open");
 });
