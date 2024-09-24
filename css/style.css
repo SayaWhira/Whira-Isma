@@ -30,6 +30,27 @@ body {
 .hero {
   position: relative;
   min-height: 100vh;
+  transition: transform 2s ease-in-out;
+  /* Smooth transition for lifting */
+  transform: translateY(0);
+  /* Start position */
+}
+
+.hero.lift {
+  transform: translateY(-100vh);
+  /* Move hero upwards off-screen */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  /* Make sure it covers full screen while it's visible */
+  z-index: 10;
+  /* Keep hero section under off-canvas */
+}
+
+.hero-hidden {
+  display: none;
 }
 
 .hero h4 {
@@ -88,6 +109,7 @@ body {
 }
 
 /* Navbar Start */
+
 .mynavbar .navbar-brand,
 .mynavbar .offcanvas-title {
   font-family: "sacramento", cursive;
@@ -106,9 +128,12 @@ body {
 }
 
 .mynavbar .offcanvas {
-  height: 100vh; /* Limit the height to 50% of the viewport */
-  width: 50vw; /* Set the width to 80% of the viewport */
-  max-width: 320px; /* Set a max width if needed */
+  height: 100vh;
+  /* Limit the height to 50% of the viewport */
+  width: 50vw;
+  /* Set the width to 80% of the viewport */
+  max-width: 320px;
+  /* Set a max width if needed */
 }
 
 .quran {
@@ -522,7 +547,7 @@ footer a {
   }
 
   .quran-image {
-    padding-top: 8%;
+    padding-top: 5%;
     max-width: 90%;
     /* Lebih kecil untuk layar yang lebih kecil */
   }
@@ -537,9 +562,9 @@ footer a {
   .quran p {
     font-size: 12px;
     /* Lebih kecil lagi untuk layar sempit */
-    top: 51%;
+    top: 52%;
     /* Menyesuaikan posisi teks */
-    width: 60%;
+    width: 58%;
     /* Mengoptimalkan ruang teks */
   }
 
@@ -680,7 +705,7 @@ footer a {
 }
 
 /* mobile phone */
-@media (max-width: 576px) {
+@media (max-width: 600px) {
   html {
     font-size: 60%;
   }
@@ -721,7 +746,7 @@ footer a {
   .logo {
     max-width: 35%;
     /* Menyesuaikan ukuran logo */
-    top: 17%;
+    top: 18%;
     /* Menurunkan posisi logo */
   }
 
@@ -750,9 +775,12 @@ footer a {
   }
 
   .mynavbar .offcanvas {
-    height: 100vh; /* Limit the height to 50% of the viewport */
-    width: 50vw; /* Set the width to 80% of the viewport */
-    max-width: 320px; /* Set a max width if needed */
+    height: 100vh;
+    /* Limit the height to 50% of the viewport */
+    width: 50vw;
+    /* Set the width to 80% of the viewport */
+    max-width: 320px;
+    /* Set a max width if needed */
   }
 
   .mynavbar .offcanvas-title {
@@ -763,7 +791,66 @@ footer a {
 }
 
 /* mobile phone */
-@media (max-width: 380px) {
+@media (max-width: 440px) {
+  html {
+    font-size: 60%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 30px;
+    margin: 3px;
+  }
+
+  .quran-image {
+    padding-top: 10%;
+    max-width: 90%;
+    /* Lebih kecil untuk layar yang lebih kecil */
+  }
+
+  .logo {
+    max-width: 35%;
+    /* Menyesuaikan ukuran logo */
+    top: 18%;
+    /* Menurunkan posisi logo */
+  }
+
+  .quran p {
+    font-size: 10px;
+    /* Lebih kecil lagi untuk layar sempit */
+    top: 55%;
+    /* Menyesuaikan posisi teks */
+    width: 55%;
+    /* Mengoptimalkan ruang teks */
+  }
+
+  .video-quran {
+    top: 40%;
+    height: 103%;
+  }
+
+  .mynavbar {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: none;
+  }
+
+  .mynavbar .offcanvas {
+    height: 100vh;
+    /* Limit the height to 50% of the viewport */
+    width: 50vw;
+    /* Set the width to 80% of the viewport */
+    max-width: 320px;
+    /* Set a max width if needed */
+  }
+
+  .mynavbar .offcanvas-title {
+    font-family: "sacramento", cursive;
+    font-size: 2.3rem;
+    font-weight: bold;
+  }
+}
+
+/* mobile phone */
+@media (max-width: 370px) {
   html {
     font-size: 60%;
   }
@@ -787,7 +874,7 @@ footer a {
   }
 
   .quran p {
-    font-size: 10px;
+    font-size: 9.5px;
     /* Lebih kecil lagi untuk layar sempit */
     top: 60%;
     /* Menyesuaikan posisi teks */
@@ -806,14 +893,30 @@ footer a {
   }
 
   .mynavbar .offcanvas {
-    height: 100vh; /* Limit the height to 50% of the viewport */
-    width: 50vw; /* Set the width to 80% of the viewport */
-    max-width: 320px; /* Set a max width if needed */
+    height: 100vh;
+    /* Limit the height to 50% of the viewport */
+    width: 50vw;
+    /* Set the width to 80% of the viewport */
+    max-width: 320px;
+    /* Set a max width if needed */
   }
 
   .mynavbar .offcanvas-title {
     font-family: "sacramento", cursive;
     font-size: 2.3rem;
     font-weight: bold;
+  }
+
+  .logo-header {
+    height: 200px;
+    /* Sesuaikan tinggi logo */
+    width: auto;
+    /* Agar proporsi logo tetap terjaga */
+    max-width: 100%;
+    /* Pastikan gambar tidak lebih besar dari container */
+    display: block;
+    /* Membuat gambar bertindak sebagai elemen block */
+    margin: 0 auto;
+    /* Untuk memastikan logo berada di tengah, jika diperlukan */
   }
 }

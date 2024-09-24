@@ -7,6 +7,7 @@ offcanvas.addEventListener("show.bs.offcanvas", function () {
 offcanvas.addEventListener("hidden.bs.offcanvas", function () {
   stickytop.style.overflow = "hidden";
 });
+// java script Navbar End//
 
 // <!-- java script section music start -->
 const rootElement = document.querySelector(":root");
@@ -30,6 +31,13 @@ function enableScroll() {
   window.onscroll = function () {};
   rootElement.style.scrollBehavior = "smooth";
   playAudio();
+
+  document.querySelector(".hero").classList.add("lift");
+
+  setTimeout(function () {
+    document.querySelector(".hero").classList.add("hero-hidden");
+  }, 2000);
+
   document.getElementById("quran").classList.add("animate");
 }
 
@@ -98,7 +106,7 @@ simplyCountdown(".simply-countdown", {
     seconds: { singular: "Detik", plural: "Detik" },
   },
 });
-
+// text quran//
 document.addEventListener("DOMContentLoaded", function () {
   // Fungsi untuk memicu animasi ketika elemen quran masuk ke viewport
   let observer = new IntersectionObserver(
@@ -153,8 +161,4 @@ navLinks.forEach((link) => {
     // Close the offcanvas when any link is clicked
     bsOffcanvas.hide();
   });
-});
-// tirai
-document.querySelector(".btn").addEventListener("click", function () {
-  document.querySelector(".curtain").classList.add("open");
 });
