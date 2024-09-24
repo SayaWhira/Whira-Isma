@@ -30,7 +30,7 @@ body {
 .hero {
   position: relative;
   min-height: 100vh;
-  transition: transform 2s ease-in-out;
+  transition: transform 3s ease-in-out;
   /* Smooth transition for lifting */
   transform: translateY(0);
   /* Start position */
@@ -106,6 +106,13 @@ body {
 .hero a:hover {
   background-color: #ffe08e;
   color: white;
+}
+
+.handwriting {
+  font-family: "Dancing Script", cursive; /* Pastikan font ini tersedia */
+  font-size: 1.2rem;
+  font-style: italic;
+  color: chartreuse !important;
 }
 
 /* Navbar Start */

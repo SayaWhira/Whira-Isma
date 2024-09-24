@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (index < text.length) {
       container.innerHTML += text.charAt(index);
       index++;
-      setTimeout(type, 30); // Atur kecepatan munculnya huruf (ms)
+      setTimeout(type, 40); // Atur kecepatan munculnya huruf (ms)
     } else {
       container.classList.add("animate"); // Tambahkan kelas animasi setelah semua huruf muncul
     }
